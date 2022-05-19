@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: angularhello 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: angularhello
+  template:
+    metadata:
+      labels:
+        app: angularhello 
+    spec:
+      containers:
+        - name: angularhello 
+          image: dockeraz.azurecr.io/angularhello
+          ports:
+          - containerPort: 3000
